@@ -1,0 +1,32 @@
+body{
+  overflow-x: hidden;
+  font-family: 'Lilita One', sans-serif;
+  scroll-behavior: smooth;
+  color: black;
+}
+
+/* input {
+  caret-color: transparent;
+} */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #695acd39; /*#f1f1f1*/ 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+   background: #e0322c78;/*#888 */
+  border-radius: 5px; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
