@@ -2,13 +2,12 @@
 
 # dependencies
 /node_modules
-/src/components/carCards/carData.js
 /.pnp
 .pnp.js
 
 # testing
 /coverage
-/src/components/Payment/constant.js
+
 
 # production
 /build

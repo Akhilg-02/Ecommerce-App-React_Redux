@@ -8,7 +8,7 @@ git add --all
 git status
 
 # Commit changes with a specified message
-git commit -m "added navigation bar"
+git commit -m "added product slider, button for filter data"
 
 # Push changes to the remote repository
 git push origin main
