@@ -1,11 +1,12 @@
 import React from "react";
 import { Button } from "@material-tailwind/react";
 import clothes from "../../assets/images/clothes.jpg";
-//import { filterProducts } from "../../features/slices/productsSlice";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { filterProducts } from "../../Redux/slices/productSlice";
 
-const FilterData = () => {
+
+const NavigateClothes = () => {
     const buttons = [
         "Jackets",
         "Suits",
@@ -25,18 +26,18 @@ const FilterData = () => {
             {buttons.map((button, index) => {
               return (
                 <div key={index} className="mr-4">
-                  {/* <Link to={"/filteredProducts/" + button}>*/}
+                  <Link to={"/filter-product/" + button}>
                     <Button
                       color="gray"
                       size="lg"
                       variant="outlined"
                       ripple={true}
                       className="text-black hover:bg-gray-300 duration-300 ease-in-out"
-                     //onClick={() => dispatch(filterProducts(button))}
+                     onClick={() => dispatch(filterProducts(button))}
                     >
                       {button}
                     </Button>
-                   {/* </Link> */}
+                   </Link>
                 </div>
               );
             })}
@@ -57,4 +58,4 @@ const FilterData = () => {
       );
 }
 
-export default FilterData
+export default NavigateClothes

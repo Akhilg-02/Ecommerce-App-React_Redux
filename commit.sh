@@ -8,7 +8,7 @@ git add --all
 git status
 
 # Commit changes with a specified message
-git commit -m "added product slider, button for filter data"
+git commit -m "added multiple products route, single product page"
 
 # Push changes to the remote repository
 git push origin main
