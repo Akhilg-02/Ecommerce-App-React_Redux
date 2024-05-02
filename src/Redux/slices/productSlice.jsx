@@ -25,9 +25,10 @@ export const productsSlice = createSlice({
 
         singleProduct(state,action){
             try {
-             const oneProduct = storeData.filter((product)=>product.id === action.payload)
-
-             state.filteredProducts = oneProduct;
+            const oneProduct = state.filteredProducts.filter(
+                (product) => product.id === action.payload
+                );
+                state.singleProduct = oneProduct;
              //console.log("oneProduct",oneProduct)
              const saveState = JSON.stringify(oneProduct);
              sessionStorage.setItem("oneProduct",saveState);

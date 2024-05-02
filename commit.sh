@@ -8,7 +8,7 @@ git add --all
 git status
 
 # Commit changes with a specified message
-git commit -m "added multiple products route, single product page"
+git commit -m "add to cart and remove functionality and flow added"
 
 # Push changes to the remote repository
 git push origin main
