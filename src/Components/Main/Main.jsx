@@ -1,15 +1,16 @@
-import React from 'react'
-import Navbar from '../Navbar/Navbar'
 import Slider from '../Slider/Slider'
 import NavigateClothes from '../NavigateClothes/NavigateClothes'
+import ProductSection from '../ProductSection/ProductSection'
+import Footer from '../Footer/Footer'
 
 
 const Main = () => {
   return (
     <div>
-     <Navbar/>
      <Slider/>
      <NavigateClothes/>
+     <ProductSection/>
+     <Footer/>
     </div>
   )
 }

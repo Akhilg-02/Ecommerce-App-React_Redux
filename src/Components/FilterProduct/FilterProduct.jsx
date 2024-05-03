@@ -9,24 +9,32 @@ import {
     MenuItem,
   } from "@material-tailwind/react";
 import ProductCard from './ProductCard';
+import Error from '../Error/Error';
+import {
+  filterProducts,
+  filterGender,
+  sortByPrice,
+  filterByColor,
+  filterBySize,
+} from "../../Redux/slices/productSlice"
 
 
 const FilterProduct = () => {
-    const products = useSelector((state)=>state.products.filteredProducts)
-    console.log("FilProducts",products);
+    const products = useSelector((state)=>state.products.filteredProducts);
+    const error = useSelector((state)=>state.products.error);
+   // console.log("FilProducts",products);
     const {type} = useParams();
-    console.log('params',type);
-    const error = null
+    //console.log('params',type);
     const genderButtons = ["male", "female"];
     const colorButtons = [
-      "red",
-      "green",
-      "purple",
-      "yellow",
-      "orange",
-      "blue",
-      "black",
-      "brown",
+      "Red",
+      "Green",
+      "Purple",
+      "Yellow",
+      "Orange",
+      "Blue",
+      "Black",
+      "Brown",
     ];
     const sizeButtons = ["S", "M", "L", "XL"];
     const dispatch = useDispatch();
@@ -48,7 +56,7 @@ const FilterProduct = () => {
                       variant="outlined"
                       ripple={true}
                       className="text-black hover:bg-gray-300 duration-300 ease-in-out mr-4"
-                     // onClick={() => dispatch(filterGender(item))}
+                     onClick={() => dispatch(filterGender(item))}
                     >
                       {item}
                     </Button>
@@ -61,7 +69,7 @@ const FilterProduct = () => {
                 variant="outlined"
                 ripple={true}
                 className="text-black hover:bg-gray-300 duration-300 ease-in-out mr-4"
-               // onClick={() => dispatch(sortByPrice())}
+               onClick={() => dispatch(sortByPrice())}
               >
                 High Price
               </Button>
@@ -83,7 +91,7 @@ const FilterProduct = () => {
                       <MenuItem
                         style={{ color: item }}
                         key={index}
-                        //onClick={() => dispatch(filterByColor(item))}
+                        onClick={() => dispatch(filterByColor(item))}
                       >
                         {item}
                       </MenuItem>
@@ -104,7 +112,7 @@ const FilterProduct = () => {
                     Select a size
                   </Button>
                 </MenuHandler>
-                {/* <MenuList>
+                <MenuList>
                   {sizeButtons.map((item, index) => {
                     return (
                       <MenuItem
@@ -115,11 +123,11 @@ const FilterProduct = () => {
                       </MenuItem>
                     );
                   })}
-                </MenuList> */}
+                </MenuList>
               </Menu>
             </div>
             <div className="pr-14">
-              {/* <Button
+              <Button
                 color="gray"
                 size="lg"
                 variant="outlined"
@@ -128,12 +136,12 @@ const FilterProduct = () => {
                 onClick={() => dispatch(filterProducts(type))}
               >
                 Clear Filter
-              </Button> */}
+              </Button>
             </div>
           </div>
         </div>
         {error ? (
-         null
+         <Error/>
         ) 
         :
          (

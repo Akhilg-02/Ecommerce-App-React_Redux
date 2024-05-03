@@ -8,7 +8,7 @@ git add --all
 git status
 
 # Commit changes with a specified message
-git commit -m "add to cart and remove functionality and flow added"
+git commit -m "added signup for user, footer, product section"
 
 # Push changes to the remote repository
 git push origin main
