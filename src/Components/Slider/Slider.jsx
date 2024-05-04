@@ -1,43 +1,40 @@
-
-import { useDispatch, useSelector } from 'react-redux'
-import { dotSlide, nextSlide, prevSlide } from '../../Redux/slices/sliderSlice'
-import { sliderData } from '../../assets/data/dummyData'
-
-
+import { useDispatch, useSelector } from "react-redux";
+import { dotSlide, nextSlide, prevSlide } from "../../Redux/slices/sliderSlice";
+import { sliderData } from "../../assets/data/dummyData";
 
 const Slider = () => {
-    
-    const slideIndex = useSelector((state)=>state.slider.value)
-    console.log("slideIndex",slideIndex);
-    const dispatch = useDispatch();
+  const slideIndex = useSelector((state) => state.slider.value);
+  console.log("slideIndex", slideIndex);
+  const dispatch = useDispatch();
   return (
-    <div className='relative pb-4'>
-        <div>{sliderData.map((item,index)=>{
-            return(
-                <div key={item.id}
-                 className={parseInt(item.id)=== slideIndex ? 'opacity-100 duration-700 ease-in-ou scale-100':
-                 "opacity-0 duration-700 ease-in-ou scale-95"
-                
-                }
-                >
-                    <div>
-                    {parseInt(item.id)=== slideIndex && (
-                    <img src={item.img} alt="shoes" />
-                    )}
-                        
-                    </div>
-                    <div  className="absolute top-44 mx-auto inset-x-1/4">
-                        <p className='text-white text-4xl font-inter font-bold tracking-normal leading-none'>
-                        {parseInt(item.id) === slideIndex && item.text}
-                        </p>
-                    </div>
-
-                </div>
-            )
+    <div className="relative pb-4">
+      <div tyle={{height:"10vh"}}>
+        {sliderData.map((item, index) => {
+          return (
+            <div
+              key={item.id}
+              className={
+                parseInt(item.id) === slideIndex
+                  ? "opacity-100 duration-700 ease-in-ou scale-100"
+                  : "opacity-0 duration-700 ease-in-ou scale-95"
+              }
+            >
+              <div>
+                {parseInt(item.id) === slideIndex && (
+                  <img src={item.img} alt="slider clothes" style={{height:"130vh",width:"100%"}} />
+                )}
+              </div>
+              <div className="absolute top-44 mx-auto inset-x-1/4">
+                <p className="text-white text-4xl font-inter font-bold tracking-normal leading-none">
+                  {parseInt(item.id) === slideIndex && item.text}
+                </p>
+              </div>
+            </div>
+          );
         })}
-        </div>
-        {/* Dot section */}
-        <div className="flex absolute bottom-12  left-[45%]">
+      </div>
+      {/* Dot section */}
+      <div className="flex absolute bottom-12  left-[45%]">
         {sliderData.map((dot, index) => {
           return (
             <div className="mr-4" key={dot.id}>
@@ -94,10 +91,8 @@ const Slider = () => {
           </svg>
         </button>
       </div>
-      
-
     </div>
-  )
-}
+  );
+};
 
-export default Slider
+export default Slider;

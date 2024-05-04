@@ -1,28 +1,36 @@
-import {useState} from 'react'
-import logo from "../../assets/images/logo.png";
+import { useState } from "react";
+import logo from "../../assets/images/logo2.png";
 import { Avatar } from "@material-tailwind/react";
 import { Tooltip } from "@material-tailwind/react";
-import Cart from '../Cart/Cart';
-import { useSelector,useDispatch } from 'react-redux';
-import { logout } from '../../Redux/slices/authSlice';
+import Cart from "../Cart/Cart";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../../Redux/slices/authSlice";
 
 const Navbar = () => {
-    const totalAmount = useSelector((state) => +state.cart.totalAmount);
+  const totalAmount = useSelector((state) => state.cart.totalAmount);
   const user = useSelector((state) => state.user.user);
- const { name, image } = user;
+  const { name, image } = user;
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
   };
- const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   return (
     <>
-      <div className="bg-black p-4 w-full flex justify-center items-center ">
-      </div>
       <div className="flex justify-around items-center">
         <div>
-          <img className="h-28 w-full" src={logo} alt="store"></img>
+          <img
+            className="h-32"
+            src={logo}
+            alt="store"
+            style={{
+              border: "3px solid #fdd835",
+              marginLeft: "-14vw",
+              width: "32vw",
+              borderRadius:"2em",
+            }}
+          />
         </div>
         <div className="flex flex-row items-center">
           <div className="flex flex-row items-center">
@@ -40,7 +48,7 @@ const Navbar = () => {
                 d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
               />
             </svg>
-            <p className=" font-inter text-base font-medium tracking-normal leading-none text-center mr-2">
+            <p className=" font-inter cursor-pointer text-base font-medium tracking-normal leading-none text-center mr-2">
               Whish List
             </p>
           </div>
@@ -50,11 +58,9 @@ const Navbar = () => {
           >
             {totalAmount > 0 ? (
               <span className="rounded-full bg-gray-300 px-2 font-inter text-sm mr-1">
-                {Number(totalAmount)}
+                {totalAmount}
               </span>
-            ) 
-            : 
-            (
+            ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -74,9 +80,7 @@ const Navbar = () => {
             <p className=" font-inter text-base font-medium tracking-normal leading-none text-center ">
               Shopping bag
             </p>
-            <div>
-              {open && <Cart openModal={open} setOpen={setOpen}/>}
-            </div>
+            <div>{open && <Cart openModal={open} setOpen={setOpen} />}</div>
           </div>
           <div className="flex flex-row items-center cursor-pointer pl-4">
             {image && (
@@ -89,7 +93,7 @@ const Navbar = () => {
             )}
             <div onClick={() => dispatch(logout())}>
               <Tooltip content="Sign Out" placement="bottom">
-                <p className="font-inter text-sm font-medium tracking-normal leading-none">
+                <p className="text-yellow-200 font-inter text-md font-medium tracking-normal leading-none">
                   Hi {name.charAt("0").toUpperCase() + name.slice(1)}
                 </p>
               </Tooltip>
@@ -98,16 +102,18 @@ const Navbar = () => {
         </div>
       </div>
       <div className="bg-black p-4 w-full flex items-center justify-center mx-auto">
-        <p className="text-white font-inter text-base font-medium ">50& OFF</p>
+        <p className="text-white font-inter text-base font-medium ">
+          50% OFF on Sale
+        </p>
         <p className="text-white font-inter text-base font-medium mx-96">
-          Free shipping and returns
+          Free Shipping & Returns
         </p>
         <p className="text-white font-inter text-base font-medium ">
-          Diffrent payment methods
+          Different Payment methods
         </p>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

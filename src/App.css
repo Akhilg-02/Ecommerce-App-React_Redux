@@ -2,6 +2,7 @@ body{
   overflow-x: hidden;
   font-family: 'Lilita One', sans-serif;
   scroll-behavior: smooth;
+  background-color: #673ab7;
   color: black;
 }
 

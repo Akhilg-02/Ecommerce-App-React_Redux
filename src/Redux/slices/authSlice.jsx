@@ -7,7 +7,6 @@ export const authSlice = createSlice({
     user:JSON.parse(sessionStorage.getItem("authUser")) ||{
         name:"",
         password:"",
-        image:"",
         authUser:false
     },
   },
@@ -33,7 +32,6 @@ export const authSlice = createSlice({
         state.user = {
             name: "",
             password: "",
-            image: "",
             authUser: false,
           };
           sessionStorage.clear();

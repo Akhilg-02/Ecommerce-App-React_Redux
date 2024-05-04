@@ -6,6 +6,7 @@ import SingleProduct from "./Components/FilterProduct/SingleProduct";
 import Navbar from "./Components/Navbar/Navbar";
 import Login from "./Components/Login/Login";
 import { useSelector } from "react-redux";
+import Footer from "./Components/Footer/Footer";
 
 
 function App() {
@@ -24,6 +25,9 @@ function App() {
         <Route path="/filter-product/:type" element={<FilterProduct/>} />
         <Route path="/filter-product/:type/:id" element={<SingleProduct/>} />             
       </Routes> 
+      </div>
+      <div>
+      <Footer/>
       </div>
     </div>
   );

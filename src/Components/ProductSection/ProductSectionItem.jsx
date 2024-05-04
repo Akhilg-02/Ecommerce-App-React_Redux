@@ -26,13 +26,7 @@ const ProductSectionItem = ({
     const defaultColor = color[0];
   return (
     <div>
-    <Card className="w-96 relative">
-      <Typography
-        variant="h4"
-        className="mb-2 absolute -rotate-45 top-12 right-8 z-10 text-red-700"
-      >
-        SALE%
-      </Typography>
+    <Card className="w-96 relative" style={{backgroundColor:"#555555"}}>
       <CardHeader floated={false} className="h-96">
         <img src={img} alt={name} />
       </CardHeader>
@@ -40,7 +34,7 @@ const ProductSectionItem = ({
         <Typography variant="h4" color="blue-gray" className="mb-2">
           {name}
         </Typography>
-        <Typography color="gray" className="font-medium" textGradient>
+        <Typography  className="font-medium" style={{color:"white"}}>
           {text}
         </Typography>
         <div className="flex justify-between items-center pt-4">
@@ -78,7 +72,7 @@ const ProductSectionItem = ({
               )
             }
             size="lg"
-            color="gray"
+            color="white"
             variant="outlined"
             ripple={true}
           >

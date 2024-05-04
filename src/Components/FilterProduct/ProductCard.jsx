@@ -15,18 +15,18 @@ const ProductCard = ({ id, name, text, img, price, colors }) => {
     const { type } = useParams()
   return (
     <Link to={`/filter-product/${type}/` + id}>
-    <Card className="w-96" onClick={() => dispatch(singleProduct(id))}>
-      <CardHeader color="blue" className="relative h-96">
-        <img src={img} alt="img-blur-shadow" className="h-full w-full" />
+    <Card className="w-94" onClick={() => dispatch(singleProduct(id))} style={{backgroundColor:"#555555"}}>
+      <CardHeader color="blue" className="relative h-96" >
+        <img src={img} alt="img-blur-shadow" className="h-full w-full"/>
       </CardHeader>
       <CardBody className="text-center">
-        <Typography variant="h5" className="mb-2">
+        <Typography variant="h5" className="mb-2" style={{color:"white"}}>
           {name}
         </Typography>
-        <Typography>{text}</Typography>
+        <Typography style={{color:"white"}}>{text}</Typography>
       </CardBody>
       <CardFooter divider className="flex items-center justify-between py-3">
-        <Typography variant="small">{price}$</Typography>
+        <Typography variant="small" style={{color:"black"}}>{price}$</Typography>
         <Typography variant="small" color="gray" className="flex gap-1">
           {colors?.map((color, index) => {
             return (

@@ -27,22 +27,22 @@ const FilterProduct = () => {
     //console.log('params',type);
     const genderButtons = ["male", "female"];
     const colorButtons = [
-      "Red",
-      "Green",
-      "Purple",
-      "Yellow",
-      "Orange",
-      "Blue",
-      "Black",
-      "Brown",
+      "red",
+      "green",
+      "purple",
+      "yellow",
+      "orange",
+      "blue",
+      "black",
+      "brown",
     ];
     const sizeButtons = ["S", "M", "L", "XL"];
     const dispatch = useDispatch();
   return (
-    <div className="">
+    <div style={{padding:"3em"}}>
       <div className="pt-16">
         <div className="pl-14">
-          <h1 className="text-gray-600 text-4xl font-inter font-bold tracking-normal leading-none">
+          <h1 className="text-yellow-600 text-4xl font-inter font-bold tracking-normal leading-none">
             {type}
           </h1>
           <div className="flex items-center justify-between py-8 ">
@@ -55,7 +55,7 @@ const FilterProduct = () => {
                       size="lg"
                       variant="outlined"
                       ripple={true}
-                      className="text-black hover:bg-gray-300 duration-300 ease-in-out mr-4"
+                      className="hover:bg-orange-400 duration-300 ease-in-out mr-4"
                      onClick={() => dispatch(filterGender(item))}
                     >
                       {item}
@@ -68,7 +68,7 @@ const FilterProduct = () => {
                 size="lg"
                 variant="outlined"
                 ripple={true}
-                className="text-black hover:bg-gray-300 duration-300 ease-in-out mr-4"
+                className="text-black hover:bg-orange-400 duration-300 ease-in-out mr-4"
                onClick={() => dispatch(sortByPrice())}
               >
                 High Price
@@ -80,7 +80,7 @@ const FilterProduct = () => {
                     size="lg"
                     variant="outlined"
                     ripple={true}
-                    className="text-black hover:bg-gray-300 duration-300 ease-in-out mr-4"
+                    className="text-black hover:bg-orange-400 duration-300 ease-in-out mr-4"
                   >
                     Select a color
                   </Button>
@@ -107,7 +107,7 @@ const FilterProduct = () => {
                     size="lg"
                     variant="outlined"
                     ripple={true}
-                    className="text-black hover:bg-gray-300 duration-300 ease-in-out mr-4"
+                    className="text-black hover:bg-orange-400 duration-300 ease-in-out mr-4"
                   >
                     Select a size
                   </Button>
@@ -128,12 +128,12 @@ const FilterProduct = () => {
             </div>
             <div className="pr-14">
               <Button
-                color="gray"
-                size="lg"
-                variant="outlined"
-                ripple={true}
-                className="text-black hover:bg-gray-300 duration-300 ease-in-out mr-4"
-                onClick={() => dispatch(filterProducts(type))}
+                 color="gray"
+                 size="lg"
+                 variant="outlined"
+                 ripple={true}
+                 className="text-black hover:bg-red-600 duration-300 ease-in-out mr-4"
+                 onClick={() => dispatch(filterProducts(type))}
               >
                 Clear Filter
               </Button>
@@ -145,7 +145,7 @@ const FilterProduct = () => {
         ) 
         :
          (
-          <div className="grid grid-cols-4 justify-items-center py-8 gap-12 ">
+          <div className="grid grid-cols-4 justify-items-center py-8 gap-12 gap-x-6">
             {products
               .filter((product) => product.type === type)
               .map((product, index) => {

@@ -15,7 +15,6 @@ const Login = () => {
   const intitalState = {
     name: "",
     password: "",
-    image: "",
   };
   const [values, setValues] = useState(intitalState);
   const onChange = (e) => {
@@ -35,7 +34,7 @@ const Login = () => {
           className="mb-4 grid h-28 place-items-center"
         >
           <Typography variant="h3" color="white">
-            Sign In
+            Log In
           </Typography>
         </CardHeader>
         <CardBody className="flex flex-col gap-4">
@@ -53,14 +52,6 @@ const Login = () => {
             type="password"
             name="password"
             value={values.password}
-            onChange={onChange}
-          />
-          <Input
-            label="Image URL address"
-            size="lg"
-            type="text"
-            name="image"
-            value={values.image}
             onChange={onChange}
           />
           <div className="-ml-2.5"></div>
