@@ -12,6 +12,6 @@ Enjoy a seamless shopping experience with personalized recommendations and secur
 - In login section Regex is implemented.So try to input according to the given example.
 - Example:-
 This example is for general purpose so user can login and check the main dashbord.
- Email: Chirag123@yahoo.com
+ Email: Chirag123@yahoo.com \
  Password: Chirag123
 
