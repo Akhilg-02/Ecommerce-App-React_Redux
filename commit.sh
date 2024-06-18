@@ -8,7 +8,7 @@ git add --all
 git status
 
 # Commit changes with a specified message
-git commit -m "added readme file infromation for the user"
+git commit -m "login issue resolved and updated readme file"
 
 # Push changes to the remote repository
 git push origin main

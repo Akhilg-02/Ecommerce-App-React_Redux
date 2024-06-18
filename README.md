@@ -13,6 +13,6 @@ Enjoy a seamless shopping experience with personalized recommendations and secur
 - Example:-
 This example is for general purpose so user can login and check the main dashbord. \
 
- Email: Chirag123@yahoo.com \
- Password: Chirag123
+ Email: Karen \
+ Password: Karen@1234
 

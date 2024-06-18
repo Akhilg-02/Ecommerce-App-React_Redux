@@ -64,9 +64,6 @@ const Login = () => {
           >
             Sign In
           </Button>
-          <Typography variant="small" className="mt-6 flex justify-center">
-            Image is Optional
-          </Typography>
         </CardFooter>
       </Card>
     </div>
