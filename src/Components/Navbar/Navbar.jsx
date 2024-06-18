@@ -3,6 +3,7 @@ import logo from "../../assets/images/logo2.png";
 import { Avatar } from "@material-tailwind/react";
 import { Tooltip } from "@material-tailwind/react";
 import Cart from "../Cart/Cart";
+import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../Redux/slices/authSlice";
 
@@ -20,6 +21,7 @@ const Navbar = () => {
     <>
       <div className="flex justify-around items-center">
         <div>
+        <NavLink exact to="/" className="nav-logo">
           <img
             className="h-32"
             src={logo}
@@ -31,6 +33,7 @@ const Navbar = () => {
               borderRadius:"2em",
             }}
           />
+          </NavLink>
         </div>
         <div className="flex flex-row items-center">
           <div className="flex flex-row items-center">

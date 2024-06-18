@@ -8,7 +8,7 @@ git add --all
 git status
 
 # Commit changes with a specified message
-git commit -m "login issue resolved and updated readme file"
+git commit -m "added route when click on application logo for home"
 
 # Push changes to the remote repository
 git push origin main
